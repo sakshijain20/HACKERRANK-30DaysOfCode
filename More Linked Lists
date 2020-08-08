@@ -1,0 +1,34 @@
+Constraints
+
+The data elements of the linked list argument will always be in non-decreasing order
+
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+typedef struct Node
+{
+    int data;
+    struct Node* next;
+}Node;
+
+Node* removeDuplicates(Node *head){
+  //Write your code here
+  if(head == NULL)
+    return NULL;
+Node *s = head;
+while(s->next != NULL){
+    if(s->data == s->next->data)
+        s->next = s->next->next;
+    else
+        s = s->next;
+} 
+return head;
+}
+
+Node* insert(Node *head,int data)
